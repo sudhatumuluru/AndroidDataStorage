@@ -24,42 +24,45 @@
             android:layout_height="60dp"
             android:src="@drawable/sjsulogo" />
 
-        <TextView android:layout_width="match_parent"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/title"
             android:textSize="@dimen/font_medium"
             android:textColor="@android:color/white"
-            android:layout_toRightOf="@id/imageView1"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="0dp" />
 
     </RelativeLayout>
 
     <TableLayout
-        android:id="@+id/button_grid_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="2"
         android:layout_marginTop="40dp">
+
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp">
+            android:layout_height="wrap_content">
+
             <Button
-                android:layout_width="0dp"
-                android:layout_weight="1"
+
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="55dp"
+                android:layout_marginLeft="20dp"
                 android:onClick="onSelectPreferences"
                 android:text="@string/btn_preference"
                 android:textColor="@android:color/black"
                 android:textAllCaps="false"
+                android:padding="5dp"
                 android:textSize="@dimen/font_medium"
                 android:background="@color/light_yellow"/>
+
             <Button
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_marginLeft="5dp"
+                android:padding="5dp"
                 android:layout_height="50dp"
                 android:onClick="onSelectSqlite"
                 android:text="@string/btn_sqlite"
@@ -72,29 +75,27 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="120dp"
         android:layout_marginTop="40dp">
         <TextView
             android:id="@+id/input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:padding="3dp"
-            android:typeface="monospace"
+
             />
     </ScrollView>
 
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/btn_close"
         android:textSize="@dimen/font_medium"
-        android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:background="@color/light_yellow"
+        android:textAllCaps="false"
         android:onClick="closeApp" />
 
 </LinearLayout>
