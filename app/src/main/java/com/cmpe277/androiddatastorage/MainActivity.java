@@ -25,16 +25,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         try {
-            InputStream in = openFileInput(PreferencesActivity.STORE_PREFERENCES);
-            if(in != null) {
-                InputStreamReader tmp=new InputStreamReader(in);
-                BufferedReader reader=new BufferedReader(tmp);
+            InputStream input_Text = openFileInput(PreferencesActivity.STORE_PREFERENCES);
+            if(input_Text != null) {
+                InputStreamReader temp=new InputStreamReader(input_Text);
+                BufferedReader br=new BufferedReader(temp);
                 String str;
                 StringBuilder buf=new StringBuilder();
-                while((str=reader.readLine())!=null) {
+                while((str=br.readLine())!=null) {
                     buf.append(str +"\n");
                 }
-                in.close();
+                input_Text.close();
                 input.setText(buf.toString());
                 input.setVisibility(View.VISIBLE);
             } else {

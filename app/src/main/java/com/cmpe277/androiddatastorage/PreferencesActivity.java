@@ -22,8 +22,8 @@ public class PreferencesActivity extends AppCompatActivity {
     private EditText desc;
     private int counter = 0;
     private SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy-hh:mm a");
-    public final static String STORE_PREFERENCES= "assignment4_pref.txt";
-    public final static String BOOK_PREFERCENS = "assignment4_books.text"; //File to save book title
+    public final static String STORE_PREFERENCES= "storage_pref.txt";
+    public final static String BOOK_PREFERCENS = "book_pref.text"; //File to save book title
     private final static String COUNTER = "COUNTER";
 
     @Override
@@ -49,12 +49,10 @@ public class PreferencesActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt(COUNTER, counter);
                 editor.commit();
-                //Share preference
                 OutputStreamWriter out=new OutputStreamWriter(openFileOutput(STORE_PREFERENCES, MODE_APPEND));
                 String message = "\nSaved Preference " + counter + ", " + s.format(new Date());
                 out.write(message);
                 out.close();
-                //Book preferences
                 OutputStreamWriter out1 =new OutputStreamWriter(openFileOutput(BOOK_PREFERCENS, MODE_APPEND));
                 String book = "\n" + name + ", " + author + ". Desc: " + description;
                 out1.write(book);

@@ -43,7 +43,7 @@ public class SQLiteActivity extends AppCompatActivity {
     public void saveSQLite(View v) {
         String blog_message = desc.getText().toString();
         if (blog_message != null) {
-            StorageController dataController = new StorageController(getBaseContext());
+            DBController dataController = new DBController(getBaseContext());
             dataController.open();
             long retValue = dataController.insert(blog_message);
             dataController.close();

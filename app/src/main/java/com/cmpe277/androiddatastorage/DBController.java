@@ -10,10 +10,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Helper class to create data storage
  */
-public class StorageController {
+public class DBController {
     public static final String MESSAGE = "Message";
     public static final String TABLE_NAME = "Msg_Table";
-    public static final String DATABASE_NAME = "Assignment4.db";
+    public static final String DATABASE_NAME = "sqlite_data.db";
     public static final int DATABASE_VERSION = 4;
     public static final String TABLE_CREATE= "create table Msg_Table (Message text not null);";
 
@@ -21,12 +21,12 @@ public class StorageController {
     private Context context;
     private SQLiteDatabase db;
 
-    public StorageController(Context context) {
+    public DBController(Context context) {
         this.context = context;
         dbHelper = new DataBaseHelper(context);
     }
 
-    public StorageController open() {
+    public DBController open() {
         db = dbHelper.getWritableDatabase();
         return this;
     }
